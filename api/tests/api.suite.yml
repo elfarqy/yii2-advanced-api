@@ -2,6 +2,7 @@ class_name: ApiTester
 modules: 
   enabled: 
     - \api\tests\Helper\Api
+    - Yii2
     - REST:
         depends: PhpBrowser
         part: Json

@@ -13,7 +13,8 @@
         "yiisoft/yii2": "~2.0.11",
         "yiisoft/yii2-bootstrap": "~2.0.2",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "kartik-v/yii2-password": "~1.5.3"
+        "kartik-v/yii2-password": "~1.5.3",
+        "codeception/codeception": "~2.1.11"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -23,8 +24,7 @@
         "firephp/firephp-core": "dev-master",
 
         "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1",
-        "codeception/codeception": "*"
+        "codeception/verify": "~0.3.1"
     },
     "repositories": [
         {

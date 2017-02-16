@@ -1,0 +1,7 @@
+class_name: FunctionalTester
+modules:
+    enabled:
+        - REST:
+            url: 'http://api.template.dev/v1/'
+            depends: PhpBrowser
+            part: Json

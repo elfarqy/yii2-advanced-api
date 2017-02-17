@@ -13,6 +13,7 @@ return [
     'supportEmail' => 'support@example.com',
     /** set password reset token expired 60 sec * 60 Min  */
     'user.passwordResetTokenExpire' => 3600,
+    'loginByEmail' => false,
     /**
      * Is user must be use strong password?
      * there is only 5 choices : simple | normal | fair | medium | strong

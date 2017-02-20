@@ -37,7 +37,15 @@ class AuthCest
      */
     public function signupWithEmptyFields(FunctionalTester $I)
     {
-
+        $I->wantTo('Check blank fields sign up scenario');
+        $I->haveHttpHeader('Content-Type', 'application/json');
+        $I->haveHttpHeader('X-Device-identifier', 'abcde123');
+        $I->sendPOST('auth/register', [
+          'User[username]' => '',
+          'User[email]'    => '',
+          'User[password]' => ''
+        ]);
+        $I->seeResponseCodeIs(\Codeception\Util\HttpCode::BAD_REQUEST);  //400
     }
 
     /**
@@ -47,6 +55,15 @@ class AuthCest
      */
     public function signupWithWrongEmail(FunctionalTester $I)
     {
+        $I->wantTo('Signup with wrong email');
+        $I->haveHttpHeader('Content-Type', 'application/json');
+        $I->haveHttpHeader('X-Device-identifier', 'abcde123');
+        $I->sendPOST('auth/register', [
+          'User[username]' => 'alvian',
+          'User[email]'    => 'alvian.com',
+          'User[password]' => 'asdasda'
+        ]);
+        $I->seeResponseCodeIs(\Codeception\Util\HttpCode::BAD_REQUEST);  //400
     }
 
     /**
@@ -122,9 +139,7 @@ class AuthCest
         $I->haveHttpHeader('Content-Type', 'application/json');
         $I->haveHttpHeader('X-Device-identifier', 'abcde123');
         $I->sendPOST('auth/forgot-password', [
-          'User' => [
-            'username' => ''
-          ]
+          'User[username]' => 'alvian'
         ]);
         $I->seeResponseCodeIs(\Codeception\Util\HttpCode::UNAUTHORIZED);  //401
     }
